@@ -1,0 +1,26 @@
+{
+    "sourceFile": "public/index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1662278796683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1662278834362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,12 @@\n+<!--\r\n+ * @Descripttion: \r\n+ * @version: \r\n+ * @Author: Leojias\r\n+ * @Date: 2022-09-04 16:06:31\r\n+ * @LastEditors: Leojias\r\n+ * @LastEditTime: 2022-09-04 16:06:37\r\n+-->\r\n <!DOCTYPE html>\r\n <html lang=\"en\">\r\n <head>\r\n     <meta charset=\"UTF-8\">\r\n@@ -6,7 +14,7 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n     <title>Document</title>\r\n </head>\r\n <body>\r\n-    \r\n+    <div id=\"app\"></div>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1662370085081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,16 +3,17 @@\n  * @version: \r\n  * @Author: Leojias\r\n  * @Date: 2022-09-04 16:06:31\r\n  * @LastEditors: Leojias\r\n- * @LastEditTime: 2022-09-04 16:06:37\r\n+ * @LastEditTime: 2022-09-05 17:28:04\r\n -->\r\n <!DOCTYPE html>\r\n <html lang=\"en\">\r\n <head>\r\n     <meta charset=\"UTF-8\">\r\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n+    <link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\">\r\n     <title>Document</title>\r\n </head>\r\n <body>\r\n     <div id=\"app\"></div>\r\n"
+                }
+            ],
+            "date": 1662278796683,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Document</title>\r\n</head>\r\n<body>\r\n    \r\n</body>\r\n</html>"
+        }
+    ]
+}

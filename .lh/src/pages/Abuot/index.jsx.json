@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/Abuot/index.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1662338228326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1662338228326,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst Abuot = () => {\r\n  return (\r\n    <div>Abuot</div>\r\n  )\r\n}\r\n\r\nexport default Abuot"
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/App.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1662278668727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1662339939025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,29 @@\n+/*\r\n+ * @Descripttion: \r\n+ * @version: \r\n+ * @Author: Leojias\r\n+ * @Date: 2022-09-04 16:03:08\r\n+ * @LastEditors: Leojias\r\n+ * @LastEditTime: 2022-09-05 09:05:38\r\n+ */\r\n import React from 'react'\r\n-\r\n+import Home from './pages/Home'\r\n+import About from './pages/About'\r\n+import{ Link} from 'react-router-dom'\r\n const App = () => {\r\n   return (\r\n-    <div>App</div>\r\n+    <div>\r\n+    <ul>\r\n+      <li>\r\n+        <Link to=\"home\">Home</Link>\r\n+      </li>\r\n+      <li>\r\n+        <Link to=\"about\">About</Link>\r\n+      </li>\r\n+    </ul>\r\n+\r\n+    </div>\r\n   )\r\n }\r\n \r\n export default App\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1662340205573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,14 @@\n  * @version: \r\n  * @Author: Leojias\r\n  * @Date: 2022-09-04 16:03:08\r\n  * @LastEditors: Leojias\r\n- * @LastEditTime: 2022-09-05 09:05:38\r\n+ * @LastEditTime: 2022-09-05 09:10:05\r\n  */\r\n import React from 'react'\r\n import Home from './pages/Home'\r\n import About from './pages/About'\r\n-import{ Link} from 'react-router-dom'\r\n+import{ Link, Route,Routes} from 'react-router-dom'\r\n const App = () => {\r\n   return (\r\n     <div>\r\n     <ul>\r\n@@ -20,9 +20,12 @@\n       <li>\r\n         <Link to=\"about\">About</Link>\r\n       </li>\r\n     </ul>\r\n-\r\n+      <Routes>\r\n+        <Route  path='/home' element={Home}/>\r\n+        <Route  path='/about' element={About}/>\r\n+      </Routes>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1662340286040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n  * @version: \r\n  * @Author: Leojias\r\n  * @Date: 2022-09-04 16:03:08\r\n  * @LastEditors: Leojias\r\n- * @LastEditTime: 2022-09-05 09:10:05\r\n+ * @LastEditTime: 2022-09-05 09:11:25\r\n  */\r\n import React from 'react'\r\n import Home from './pages/Home'\r\n import About from './pages/About'\r\n@@ -21,10 +21,10 @@\n         <Link to=\"about\">About</Link>\r\n       </li>\r\n     </ul>\r\n       <Routes>\r\n-        <Route  path='/home' element={Home}/>\r\n-        <Route  path='/about' element={About}/>\r\n+        <Route  path='/home' element={<Home/>}/>\r\n+        <Route  path='/about' element={<About/>}/>\r\n       </Routes>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1662340348404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,17 +3,18 @@\n  * @version: \r\n  * @Author: Leojias\r\n  * @Date: 2022-09-04 16:03:08\r\n  * @LastEditors: Leojias\r\n- * @LastEditTime: 2022-09-05 09:11:25\r\n+ * @LastEditTime: 2022-09-05 09:12:27\r\n  */\r\n import React from 'react'\r\n import Home from './pages/Home'\r\n import About from './pages/About'\r\n import{ Link, Route,Routes} from 'react-router-dom'\r\n const App = () => {\r\n   return (\r\n     <div>\r\n+      <div>APP</div>\r\n     <ul>\r\n       <li>\r\n         <Link to=\"home\">Home</Link>\r\n       </li>\r\n"
+                },
+                {
+                    "date": 1662340387892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n import{ Link, Route,Routes} from 'react-router-dom'\r\n const App = () => {\r\n   return (\r\n     <div>\r\n-      <div>APP</div>\r\n     <ul>\r\n       <li>\r\n         <Link to=\"home\">Home</Link>\r\n       </li>\r\n"
+                },
+                {
+                    "date": 1662340924681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,15 @@\n  * @version: \r\n  * @Author: Leojias\r\n  * @Date: 2022-09-04 16:03:08\r\n  * @LastEditors: Leojias\r\n- * @LastEditTime: 2022-09-05 09:12:27\r\n+ * @LastEditTime: 2022-09-05 09:22:04\r\n  */\r\n-import React from 'react'\r\n-import Home from './pages/Home'\r\n-import About from './pages/About'\r\n-import{ Link, Route,Routes} from 'react-router-dom'\r\n+import React,{ Suspense,lazy} from 'react'\r\n+import{ Link, Route,Routes,} from 'react-router-dom'\r\n+import { lazy } from 'react'\r\n+const Home=lazy(()=>import(\"./pages/Home\"))\r\n+const About=lazy(()=>import(\"./pages/About\"))\r\n const App = () => {\r\n   return (\r\n     <div>\r\n     <ul>\r\n"
+                },
+                {
+                    "date": 1662341018872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n  * @version: \r\n  * @Author: Leojias\r\n  * @Date: 2022-09-04 16:03:08\r\n  * @LastEditors: Leojias\r\n- * @LastEditTime: 2022-09-05 09:22:04\r\n+ * @LastEditTime: 2022-09-05 09:23:38\r\n  */\r\n import React,{ Suspense,lazy} from 'react'\r\n import{ Link, Route,Routes,} from 'react-router-dom'\r\n import { lazy } from 'react'\r\n@@ -21,12 +21,14 @@\n       <li>\r\n         <Link to=\"about\">About</Link>\r\n       </li>\r\n     </ul>\r\n+    <Suspense fallback={<div>loading....</div>}>\r\n       <Routes>\r\n         <Route  path='/home' element={<Home/>}/>\r\n         <Route  path='/about' element={<About/>}/>\r\n       </Routes>\r\n+      </Suspense>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1662341058635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n  * @version: \r\n  * @Author: Leojias\r\n  * @Date: 2022-09-04 16:03:08\r\n  * @LastEditors: Leojias\r\n- * @LastEditTime: 2022-09-05 09:23:38\r\n+ * @LastEditTime: 2022-09-05 09:22:04\r\n  */\r\n import React,{ Suspense,lazy} from 'react'\r\n import{ Link, Route,Routes,} from 'react-router-dom'\r\n import { lazy } from 'react'\r\n"
+                },
+                {
+                    "date": 1662341082602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,12 @@\n  * @version: \r\n  * @Author: Leojias\r\n  * @Date: 2022-09-04 16:03:08\r\n  * @LastEditors: Leojias\r\n- * @LastEditTime: 2022-09-05 09:22:04\r\n+ * @LastEditTime: 2022-09-05 09:24:42\r\n  */\r\n import React,{ Suspense,lazy} from 'react'\r\n import{ Link, Route,Routes,} from 'react-router-dom'\r\n-import { lazy } from 'react'\r\n const Home=lazy(()=>import(\"./pages/Home\"))\r\n const About=lazy(()=>import(\"./pages/About\"))\r\n const App = () => {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1662341411107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,14 @@\n  * @version: \r\n  * @Author: Leojias\r\n  * @Date: 2022-09-04 16:03:08\r\n  * @LastEditors: Leojias\r\n- * @LastEditTime: 2022-09-05 09:24:42\r\n+ * @LastEditTime: 2022-09-05 09:30:10\r\n  */\r\n import React,{ Suspense,lazy} from 'react'\r\n import{ Link, Route,Routes,} from 'react-router-dom'\r\n-const Home=lazy(()=>import(\"./pages/Home\"))\r\n-const About=lazy(()=>import(\"./pages/About\"))\r\n+const Home=lazy(()=>import(/* webpackChunkName:home*/\"./pages/Home\"))\r\n+const About=lazy(()=>import(/* webpackChunkName:home*/\"./pages/About\"))\r\n const App = () => {\r\n   return (\r\n     <div>\r\n     <ul>\r\n"
+                },
+                {
+                    "date": 1662341493233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,14 @@\n  * @version: \r\n  * @Author: Leojias\r\n  * @Date: 2022-09-04 16:03:08\r\n  * @LastEditors: Leojias\r\n- * @LastEditTime: 2022-09-05 09:30:10\r\n+ * @LastEditTime: 2022-09-05 09:31:32\r\n  */\r\n import React,{ Suspense,lazy} from 'react'\r\n import{ Link, Route,Routes,} from 'react-router-dom'\r\n-const Home=lazy(()=>import(/* webpackChunkName:home*/\"./pages/Home\"))\r\n-const About=lazy(()=>import(/* webpackChunkName:home*/\"./pages/About\"))\r\n+const Home=lazy(()=>import(\"./pages/Home\"))\r\n+const About=lazy(()=>import(\"./pages/About\"))\r\n const App = () => {\r\n   return (\r\n     <div>\r\n     <ul>\r\n"
+                }
+            ],
+            "date": 1662278668727,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst App = () => {\r\n  return (\r\n    <div>App</div>\r\n  )\r\n}\r\n\r\nexport default App"
+        }
+    ]
+}
